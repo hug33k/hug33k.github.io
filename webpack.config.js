@@ -27,8 +27,12 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|jpe?g|svg|gif)$/,
+				test: /\.(png|jpe?g|svg|gif|pdf)$/,
 				loader: "file-loader?emitFile=false&name=[path][name].[ext]"
+			},
+			{
+				test: /\.json$/,
+				loader: "json-loader"
 			}
 		]
 	},
