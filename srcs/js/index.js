@@ -23,6 +23,7 @@ class App extends Component {
 						<Components.Intro/>
 						<Components.Social/>
 						<Components.Documents/>
+						<Components.Projects/>
 						<Components.Footer/>
 					</div>
 				</div>

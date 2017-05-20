@@ -1,5 +1,6 @@
 /* React */
 import React, { Component } from "react";
+import { connect } from "react-redux";
 /* Icons */
 import Linkedin from "mdi-react/LinkedinIcon";
 import Facebook from "mdi-react/FacebookIcon";
@@ -11,10 +12,10 @@ import Spotify from "mdi-react/SpotifyIcon";
 import Medium from "mdi-react/MediumIcon";
 import Youtube from "mdi-react/YoutubeIcon";
 
-class Item extends Component {
+class Platform extends Component {
 
 	getIcon = () => {
-		switch (this.props.name) {
+		switch (this.props.platform.name) {
 			case "linkedin":
 				return <Linkedin/>;
 			case "facebook":
@@ -34,19 +35,19 @@ class Item extends Component {
 			case "youtube":
 				return <Youtube/>;
 			default:
-				return this.props.name;
+				return this.props.platform.name;
 		}
 	};
 
 	render() {
 		return (
-			<div className={"item " + this.props.name}>
-				<a href={this.props.url} target="_blank">
+			<div className={"item " + this.props.platform.name}>
+				<a href={this.props.platform.url} target="_blank">
 					<div className="key">
 						{this.getIcon()}
 					</div>
 					<div className="value">
-						{this.props.username}
+						{this.props.platform.username}
 					</div>
 				</a>
 			</div>
@@ -58,20 +59,21 @@ class Item extends Component {
 class Social extends Component {
 
 	render() {
+		let items = this.props.social.map((item, index) => {
+			return <Platform key={index} platform={item} />;
+		});
 		return (
 			<div id="social">
-				<Item name="linkedin" url="https://www.linkedin.com/in/hugoschoch/" username="Hugo SCHOCH"/>
-				<Item name="facebook" url="https://www.facebook.com/hugo.schoch" username="Hugo SCHOCH" />
-				<Item name="twitter" url="https://twitter.com/hug33k" username="@hug33k" />
-				<Item name="github" url="https://github.com/hug33k" username="@hug33k" />
-				<Item name="medium" url="https://medium.com/@hug33k" username="@hug33k" />
-				<Item name="instagram" url="https://www.instagram.com/hug33k" username="@hug33k" />
-				<Item name="spotify" url="https://open.spotify.com/user/hug33k" username="@hug33k" />
-				<Item name="soundcloud" url="https://soundcloud.com/hug33k" username="@hug33k" />
-				<Item name="youtube" url="https://www.youtube.com/c/HugoSchoch" username="Hugo SCHOCH" />
+				{items}
 			</div>
 		);
 	}
 }
 
-export default Social;
+const mapStateToProps = (state) => {
+	return {
+		social: state.social
+	};
+};
+
+export default connect(mapStateToProps)(Social);

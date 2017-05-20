@@ -1,27 +1,28 @@
 /* React */
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Document extends Component {
 
 	getIcon = () => {
-		switch (this.props.name) {
+		switch (this.props.document.name) {
 			case "cv_fr":
 			case "cv_en":
 				return <div className="cv_icon"/>;
 			default:
-				return this.props.name;
+				return this.props.document.name;
 		}
 	};
 
 	render() {
 		return (
-			<div className={"card document " + this.props.name}>
-				<a href={this.props.url} target="_blank">
+			<div className={"card document " + this.props.document.name}>
+				<a href={this.props.document.url} target="_blank">
+					<div className="value">
+						{this.props.document.text}
+					</div>
 					<div className="key">
 						{this.getIcon()}
-					</div>
-					<div className="value">
-						{this.props.text}
 					</div>
 				</a>
 			</div>
@@ -32,13 +33,21 @@ class Document extends Component {
 class Documents extends Component {
 
 	render() {
+		let items = this.props.documents.map((item, index) => {
+			return <Document key={index} document={item} />;
+		});
 		return (
 			<div id="documents">
-				<Document name="cv_fr" url="public/docs/CV.pdf" text="CV (Français)"/>
-				<Document name="cv_en" url="public/docs/CV_en.pdf" text="CV (English)"/>
+				{items}
 			</div>
 		);
 	}
 }
 
-export default Documents;
+const mapStateToProps = (state) => {
+	return {
+		documents: state.documents
+	};
+};
+
+export default connect(mapStateToProps)(Documents);

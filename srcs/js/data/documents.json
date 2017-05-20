@@ -1,0 +1,14 @@
+{
+	"documents": [
+		{
+			"name": "cv_fr",
+			"url": "public/docs/CV.pdf",
+			"text": "CV (Français)"
+		},
+		{
+			"name": "cv_fr",
+			"url": "public/docs/CV°en.pdf",
+			"text": "CV (English)"
+		}
+	]
+}
