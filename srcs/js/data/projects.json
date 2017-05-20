@@ -1,0 +1,19 @@
+{
+	"projects": [
+		{
+			"name": "Marquis",
+			"url": "https://marquis.io/",
+			"desc": "Marquis is a new approach on how cars dealers can manage their fleets across their dealerships.\nThrough our website or our mobile apps, anyone can get informations on vehicles, their locations, ..."
+		},
+		{
+			"name": "Epiteks",
+			"url": "https://epiteks.github.io",
+			"desc": "Epiteks is a GitHub organisation that proposes tools for Epitech students"
+		},
+		{
+			"name": "Twalk",
+			"url": "https://twalk.github.io",
+			"desc": "Twalk is a podcast app to listen, react and publish easily audio content, like streetcasts\n(Podcast recorded in the street while walking).\nCheck out my podcasts on Soundcloud about its development."
+		}
+	]
+}
