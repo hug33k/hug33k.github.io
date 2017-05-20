@@ -1,12 +1,12 @@
 import {combineReducers} from "redux";
-
-const main = (state={}, { type, payload }) => {
-	switch (type) {
-		default:
-			return state || payload;
-	}
-};
+import social from "./social";
+import documents from "./documents";
+import me from "./me";
+import projects from "./projects";
 
 export default combineReducers({
-	main
+	social,
+	documents,
+	me,
+	projects
 });
