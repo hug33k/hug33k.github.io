@@ -1,0 +1,137 @@
+/* Colors */
+
+@import "colors";
+
+@theme_light: @teal_100;
+@theme_regular: @teal;
+@theme_dark: @teal_800;
+
+@theme_accent_light: @blue_grey_100;
+@theme_accent: @blue_grey;
+@theme_accent_dark: @blue_grey_800;
+
+/* Image */
+
+@me: url("../../public/img/me.jpg");
+@laptops: url("../../public/img/laptops.jpg");
+@cv: url("../../public/img/CV_icon.jpg");
+
+/* Sizes */
+@drawer_small: 50px;
+@drawer_large: 250px;
+@head: 50px;
+@footer: 30px;
+@img_badge: 200px;
+
+/* Mixins */
+
+.position_extend() {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.fullscreen() {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	.position_extend();
+	overflow-y: hidden;
+}
+
+.fullsize() {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	.position_extend();
+	overflow-y: auto;
+}
+
+.center() {
+	position: absolute;
+	.position_extend();
+	margin: auto;
+}
+
+.shadow() {
+	box-shadow: 0 0 10px 5px rgba(0,0,0,0.25);
+}
+
+.block() {
+	background: @white;
+	width: 100%;
+	height: 100%;
+}
+
+.background_image(@height, @image, @color, @size) {
+	position: relative;
+	height: @height;
+
+	& > * {
+		position: absolute;
+		.position_extend();
+	}
+
+	.background {
+		height: 100%;
+		width: 100%;
+		background: @image @color;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		filter: blur(@size);
+		transform: scale(1.03);
+	}
+}
+
+.no_select() {
+	user-select: none;
+}
+
+.no_decoration() {
+	&:hover,
+	&:visited,
+	&:link,
+	&:active
+	{
+		text-decoration: none;
+	}
+}
+
+.card(@height) {
+	.card {
+		.shadow();
+		background: @white;
+		padding: 10px;
+		width: 750px;
+		height: @height;
+	}
+}
+
+.text() {
+	.text {
+		color: @theme_accent_dark;
+
+		h3 {
+			font-weight: 100;
+			font-size: 1.5em;
+		}
+	}
+}
+
+.flex_cols() {
+	display: flex;
+	flex-direction: column;
+}
+
+.social_color(@color) {
+	.mdi-icon {
+		border: 1px solid @color;
+		fill: @color;
+	}
+
+	.value {
+		color: @color;
+	}
+}
