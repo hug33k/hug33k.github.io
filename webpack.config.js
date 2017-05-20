@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const uglify = require("uglifyjs-webpack-plugin");
 
 module.exports = {
 	devServer: {
@@ -41,6 +42,21 @@ module.exports = {
 		filename: "js/app.min.js"
 	},
 	plugins: [
-		new webpack.optimize.OccurrenceOrderPlugin()
+		new webpack.optimize.OccurrenceOrderPlugin(),
+		new uglify({
+			comments: false,
+			compress: {
+				warnings: true,
+				conditionals: true,
+				unused: true,
+				comparisons: true,
+				sequences: true,
+				dead_code: true,
+				evaluate: true,
+				booleans: true,
+				if_return: true,
+				join_vars: true,
+			}
+		})
 	]
 };
