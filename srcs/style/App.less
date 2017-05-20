@@ -200,14 +200,16 @@
 			background: @theme_regular;
 			padding: 25px;
 			.card(300px);
-			min-height: 400px;
+			min-height: 350px;
 			display: flex;
 			justify-content: space-around;
 			flex-wrap: wrap;
+			z-index: 20;
 
 			.card {
 				width: 300px;
 				padding: 0;
+				margin: 20px;
 				position: relative;
 				transition: background 0.5s ease-in-out;
 
@@ -223,23 +225,134 @@
 						background: @cv;
 						width: 150px;
 						height: 210px;
-						margin: 20px auto 30px;
+						margin: 30px auto 20px;
 						background-position: center;
 						background-size: cover;
+						position: absolute;
+						left: 0;
+						right: 0;
+						bottom: 0;
 					}
 
 					.value {
 						.no_decoration();
-						background: @theme_accent;
+						background: @theme_dark;
+						font-weight: 100;
+						font-size: 1.5em;
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: 0;
+						height: 50px;
+						line-height: 50px;
+						color: @white;
+					}
+				}
+			}
+		}
+
+		#projects {
+			padding: 25px;
+			.card(300px);
+			min-height: 350px;
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			background: @theme_accent;
+
+			.card {
+				width: 300px;
+				height: 300px;
+				padding: 0;
+				margin: 20px;
+				position: relative;
+				overflow: hidden;
+				background: @theme_accent_dark;
+				transition: height 0.5s ease-in-out;
+
+				&:hover {
+					height: 350px;
+
+					.background {
+						filter: blur(5px);
+						transform: scale(1.2);
+						opacity: 0.3;
+					}
+
+					.name {
+						height: 50px;
+					}
+
+					.desc {
+						opacity: 1;
+					}
+				}
+
+				.background(@image) {
+					.background {
+						background-image: @image;
+					}
+				}
+
+				&.marquis {
+					.background(@marquis);
+				}
+
+				&.epiteks {
+					.background(@epiteks);
+				}
+
+				&.twalk {
+					.background(@twalk);
+				}
+
+				&.epiteks {
+					.background {
+						background-image: @epiteks;
+					}
+				}
+
+				a {
+					.no_decoration();
+
+					.background {
+						width: 300px;
+						height: 300px;
+						background-position: center;
+						background-size: cover;
+						position: absolute;
+						z-index: 10;
+						opacity: 1;
+						transition: filter 0.5s ease-in-out, transform 0.5s, opacity 0.5s;
+					}
+
+					.name {
+						.no_decoration();
+						background: @theme_accent_dark;
 						font-weight: 100;
 						font-size: 1.5em;
 						position: absolute;
 						left: 0;
 						right: 0;
 						bottom: 0;
-						height: 50px;
+						height: 0;
 						line-height: 50px;
 						color: @white;
+						z-index: 15;
+						transition: height 0.5s ease-in-out;
+					}
+
+					.desc {
+						z-index: 20;
+						position: absolute;
+						padding: 25px;
+						color: @white;
+						font-weight: 100;
+						font-size: 1.3em;
+						line-height: 1.3em;
+						text-align: center;
+						opacity: 0;
+						transition: opacity 0.5s ease-in-out;
 					}
 				}
 			}
