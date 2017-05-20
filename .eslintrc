@@ -1,0 +1,50 @@
+{
+	"parser": "babel-eslint",
+	"env": {
+		"browser": true,
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true,
+			"jsx": true,
+			"modules": true
+		}
+	},
+	"plugins": [
+		"react"
+	],
+	"rules": {
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error",
+		"no-unused-vars": [
+			"error",
+			{
+				"varsIgnorePattern": "css|React|",
+				"argsIgnorePattern": "^_"
+			}
+		],
+		"indent": [
+			"error",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		"quotes": [
+			"error",
+			"double"
+		],
+		"semi": [
+			"error",
+			"always"
+		]
+	},
+	"globals": {
+		"module": false
+	}
+}
