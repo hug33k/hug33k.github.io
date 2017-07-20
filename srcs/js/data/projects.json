@@ -14,6 +14,11 @@
 			"name": "Twalk",
 			"url": "https://twalkapp.github.io",
 			"desc": "Twalk is a podcast app to listen, react and publish easily audio content, like streetcasts\n(Podcast recorded in the street while walking).\nCheck out my podcasts on Soundcloud about its development."
+		},
+		{
+			"name": "Alfred Workflows",
+			"url": "http://www.packal.org/users/hug33k",
+			"desc": "I made some workflows for Alfred, a Spotlight-like on macOS with plugins.\nCheck them out !"
 		}
 	]
 }
