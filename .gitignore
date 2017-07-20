@@ -13,3 +13,4 @@ yarn-error.log*
 
 # dev
 .idea/
+public/js/app.min.js
