@@ -48,8 +48,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "lint:js": "eslint srcs/",
-    "lint:style": "stylelint srcs/style/*",
+    "lint:js": "eslint src/",
+    "lint:style": "stylelint src/style/*",
     "lint": "npm run lint:js && npm run lint:style",
     "build": "webpack"
   }

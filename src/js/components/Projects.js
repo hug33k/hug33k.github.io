@@ -1,16 +1,6 @@
 /* React */
 import React, { Component } from "react";
 import { connect } from "react-redux";
-/* Icons */
-import Linkedin from "mdi-react/LinkedinIcon";
-import Facebook from "mdi-react/FacebookIcon";
-import Twitter from "mdi-react/TwitterIcon";
-import Instagram from "mdi-react/InstagramIcon";
-import Soundcloud from "mdi-react/SoundcloudIcon";
-import Github from "mdi-react/GithubIcon";
-import Spotify from "mdi-react/SpotifyIcon";
-import Medium from "mdi-react/MediumIcon";
-import Youtube from "mdi-react/YoutubeIcon";
 
 class Project extends Component {
 

@@ -22,8 +22,9 @@ class App extends Component {
 						<Components.Banner img="laptops"/>
 						<Components.Intro/>
 						<Components.Social/>
+						<Components.Projects.Groups/>
+						<Components.Projects.Singles/>
 						<Components.Documents/>
-						<Components.Projects/>
 						<Components.Footer/>
 					</div>
 				</div>
