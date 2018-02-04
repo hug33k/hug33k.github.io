@@ -4,8 +4,7 @@ import Banner from "./Banner";
 import Intro from "./Intro";
 import Social from "./Social";
 import Documents from "./Documents";
-import Groups from "./Groups";
-import Singles from "./Projects";
+import Projects from "./Projects";
 
 export default {
 	Head,
@@ -14,8 +13,5 @@ export default {
 	Intro,
 	Social,
 	Documents,
-	Projects: {
-		Groups,
-		Singles
-	}
+	Projects
 };
