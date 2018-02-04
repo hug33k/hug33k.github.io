@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const uglify = require("uglifyjs-webpack-plugin");
 
 module.exports = {
 	devServer: {
@@ -9,7 +10,7 @@ module.exports = {
 		historyApiFallback: true
 	},
 	devtool: "cheap-module-eval-source-map",
-	entry: "./srcs/index.js",
+	entry: "./src/index.js",
 	module: {
 		loaders: [
 			{
@@ -27,8 +28,12 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|jpe?g|svg|gif)$/,
+				test: /\.(png|jpe?g|svg|gif|pdf)$/,
 				loader: "file-loader?emitFile=false&name=[path][name].[ext]"
+			},
+			{
+				test: /\.json$/,
+				loader: "json-loader"
 			}
 		]
 	},
@@ -37,6 +42,21 @@ module.exports = {
 		filename: "js/app.min.js"
 	},
 	plugins: [
-		new webpack.optimize.OccurrenceOrderPlugin()
+		new webpack.optimize.OccurrenceOrderPlugin(),
+		new uglify({
+			comments: false,
+			compress: {
+				warnings: true,
+				conditionals: true,
+				unused: true,
+				comparisons: true,
+				sequences: true,
+				dead_code: true,
+				evaluate: true,
+				booleans: true,
+				if_return: true,
+				join_vars: true,
+			}
+		})
 	]
 };

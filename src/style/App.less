@@ -1,0 +1,62 @@
+#app {
+	.fullscreen();
+	text-align: center;
+	background: @theme_accent_light;
+
+	#head {
+		.shadow();
+		height: @head;
+		background: @theme_regular;
+		z-index: 50;
+		position: absolute;
+		left: 0;
+		right: 0;
+
+		.title {
+			font-size: 1.5em;
+			line-height: 50px;
+			font-weight: 100;
+			color: white;
+		}
+	}
+
+	#content {
+		position: absolute;
+		top: @head;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		overflow-y: scroll;
+
+		& > * {
+			z-index: 10;
+			position: relative;
+			.shadow();
+		}
+
+		.banner {
+			z-index: 0;
+			background: @theme_light;
+			overflow: hidden;
+
+			&.laptops {
+				.background_image(400px, @laptops, @theme_accent_dark, 5px);
+			}
+
+			.background {
+				opacity: 0.75;
+			}
+		}
+
+		@import "Intro";
+
+		@import "Social";
+
+		@import "Documents";
+
+		@import "Projects";
+
+		@import "Footer";
+
+	}
+}
