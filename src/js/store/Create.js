@@ -3,7 +3,6 @@ import Reducers from "./reducers";
 import social from "../data/social.json";
 import documents from "../data/documents.json";
 import me from "../data/me.json";
-import groups from "../data/groups.json";
 import projects from "../data/projects.json";
 
 export default (initialState = {}) => {
@@ -15,7 +14,6 @@ export default (initialState = {}) => {
 		...social,
 		...documents,
 		...me,
-		...groups,
 		...projects
 	};
 
