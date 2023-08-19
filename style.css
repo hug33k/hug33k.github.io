@@ -189,7 +189,7 @@ article {
     border-radius: var(--unit-base);
     position: relative;
     height: fit-content;
-    max-height: 100vh;
+    max-height: 100%;
     transition: all var(--debug-timing) ease-in-out;
     overflow: hidden;
 }
